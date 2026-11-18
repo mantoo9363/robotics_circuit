@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 410" width="100%" height="100%">
+  <defs>
+    <!-- Realistic PCB Drop Shadow -->
+    <filter id="pcbShadow22" x="-15%" y="-10%" width="130%" height="125%">
+      <feDropShadow dx="0" dy="10" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Sensor Component Drop Shadow -->
+    <filter id="sensorShadow22" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- White/Grey DHT22 Plastic Housing -->
+    <linearGradient id="dht22White" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#eaedf0"/>
+      <stop offset="100%" stop-color="#c5cbd1"/>
+    </linearGradient>
+
+    <!-- Power LED Gradient -->
+    <radialGradient id="redLed22" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ff8080"/>
+      <stop offset="60%" stop-color="#e60000"/>
+      <stop offset="100%" stop-color="#800000"/>
+    </radialGradient>
+
+    <!-- Gold Header Pins -->
+    <linearGradient id="goldPin22" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c49a2c"/>
+      <stop offset="35%" stop-color="#ffe885"/>
+      <stop offset="70%" stop-color="#ffd034"/>
+      <stop offset="100%" stop-color="#8c6a14"/>
+    </linearGradient>
+
+    <!-- Solder Terminals / Metal Elements -->
+    <linearGradient id="solderPad22" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f3f5"/>
+      <stop offset="100%" stop-color="#a4abb0"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#pcbShadow22)">
+    <!-- 1. PCB Board (Classic Blue/Teal) -->
+    <rect x="30" y="20" width="220" height="300" rx="10" fill="#0d5c75" stroke="#083e50" stroke-width="2"/>
+
+    <!-- Mounting Hole -->
+    <circle cx="215" cy="55" r="14" fill="#083e50" stroke="#b0b8bc" stroke-width="3"/>
+    <circle cx="215" cy="55" r="9" fill="#202124"/>
+
+    <!-- Corner Solder Pads -->
+    <circle cx="45" cy="35" r="3" fill="url(#solderPad22)"/>
+    <circle cx="45" cy="305" r="3" fill="url(#solderPad22)"/>
+    <circle cx="235" cy="305" r="3" fill="url(#solderPad22)"/>
+
+    <!-- 2. Surface Mount Components -->
+    <!-- Pull-up Resistor (103 = 10kΩ) -->
+    <rect x="195" y="130" width="22" height="12" rx="1" fill="#1f1f1f"/>
+    <rect x="192" y="130" width="3" height="12" fill="url(#solderPad22)"/>
+    <rect x="217" y="130" width="3" height="12" fill="url(#solderPad22)"/>
+    <text x="206" y="139" font-family="monospace" font-size="6" fill="#e0e0e0" text-anchor="middle" font-weight="bold">103</text>
+
+    <!-- Power Indicator LED -->
+    <rect x="195" y="175" width="20" height="12" rx="2" fill="url(#solderPad22)"/>
+    <circle cx="205" cy="181" r="4.5" fill="url(#redLed22)"/>
+    <text x="205" y="200" font-family="sans-serif" font-size="7" fill="#ffffff" opacity="0.85" text-anchor="middle">PWR</text>
+
+    <!-- 3. White DHT22 Sensor Unit (Mounted on PCB) -->
+    <g filter="url(#sensorShadow22)">
+      <!-- Main Sensor Housing -->
+      <rect x="50" y="45" width="125" height="165" rx="6" fill="url(#dht22White)" stroke="#9ea5ab" stroke-width="1.5"/>
+      <text x="112" y="64" fill="#42474c" font-family="-apple-system, sans-serif" font-size="11" font-weight="900" letter-spacing="2" text-anchor="middle">DHT22</text>
+      <!-- <text x="112" y="73" fill="#6d757d" font-family="-apple-system, sans-serif" font-size="7" font-weight="bold" letter-spacing="1" text-anchor="middle">AM2302</text> -->
+      
+      <!-- Recessed Vent Cavity -->
+      <rect x="58" y="80" width="109" height="120" rx="3" fill="#181c20" stroke="#80878e" stroke-width="1"/>
+
+      <!-- 4-Column Mesh Grid (DHT22 Format) -->
+      <g fill="#0b0d0f">
+        <!-- Row 1 -->
+        <rect x="63" y="85" width="18" height="22" rx="1"/>
+        <rect x="87" y="85" width="18" height="22" rx="1"/>
+        <rect x="111" y="85" width="18" height="22" rx="1"/>
+        <rect x="135" y="85" width="18" height="22" rx="1"/>
+        <!-- Row 2 -->
+        <rect x="63" y="113" width="18" height="22" rx="1"/>
+        <rect x="87" y="113" width="18" height="22" rx="1"/>
+        <rect x="111" y="113" width="18" height="22" rx="1"/>
+        <rect x="135" y="113" width="18" height="22" rx="1"/>
+        <!-- Row 3 -->
+        <rect x="63" y="141" width="18" height="22" rx="1"/>
+        <rect x="87" y="141" width="18" height="22" rx="1"/>
+        <rect x="111" y="141" width="18" height="22" rx="1"/>
+        <rect x="135" y="141" width="18" height="22" rx="1"/>
+        <!-- Row 4 -->
+        <rect x="63" y="169" width="18" height="20" rx="1"/>
+        <rect x="87" y="169" width="18" height="20" rx="1"/>
+        <rect x="111" y="169" width="18" height="20" rx="1"/>
+        <rect x="135" y="169" width="18" height="20" rx="1"/>
+      </g>
+
+      <!-- Grille Matrix Slats -->
+      <rect x="58" y="108" width="109" height="4" fill="#d9dee3"/>
+      <rect x="58" y="136" width="109" height="4" fill="#d9dee3"/>
+      <rect x="58" y="164" width="109" height="4" fill="#d9dee3"/>
+      <rect x="82" y="80" width="4" height="120" fill="#d9dee3"/>
+      <rect x="106" y="80" width="4" height="120" fill="#d9dee3"/>
+      <rect x="130" y="80" width="4" height="120" fill="#d9dee3"/>
+    </g>
+
+    <!-- 4. PCB Silkscreen Markings -->
+    <text x="140" y="245" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" opacity="0.95" text-anchor="middle">DHT22 MODULE</text>
+    
+    <!-- 3-Pin Silkscreen Labels -->
+    <g font-family="monospace" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      <text x="80" y="290">DAT</text>
+      <text x="140" y="290">VCC</text>
+      <text x="200" y="290">GND</text>
+    </g>
+
+    <!-- Black Header Base -->
+    <rect x="62" y="305" width="156" height="15" rx="2" fill="#1a1a1a" stroke="#000000" stroke-width="1"/>
+
+    <!-- 3 Gold Header Pins (DAT, VCC, GND) -->
+    <!-- Pin 1: DATA -->
+    <rect x="76" y="315" width="8" height="65" rx="1" fill="url(#goldPin22)"/>
+    <polygon points="76,380 80,388 84,380" fill="#c49a2c"/>
+
+    <!-- Pin 2: VCC -->
+    <rect x="136" y="315" width="8" height="65" rx="1" fill="url(#goldPin22)"/>
+    <polygon points="136,380 140,388 144,380" fill="#c49a2c"/>
+
+    <!-- Pin 3: GND -->
+    <rect x="196" y="315" width="8" height="65" rx="1" fill="url(#goldPin22)"/>
+    <polygon points="196,380 200,388 204,380" fill="#c49a2c"/>
+  </g>
+</svg>

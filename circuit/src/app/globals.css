@@ -1,0 +1,395 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f5f6;
+  --foreground: #34495e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Avenir Next", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", monospace;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #f4f5f6;
+  color: var(--foreground);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  overflow: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.react-flow__node {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.react-flow__renderer,
+.react-flow__pane {
+  background: transparent !important;
+}
+
+.react-flow__background {
+  z-index: 0 !important;
+}
+
+.circuit-handle.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  min-width: 10px !important;
+  min-height: 10px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  z-index: 10 !important;
+  opacity: 0 !important;
+  pointer-events: all !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.circuit-handle.react-flow__handle:hover {
+  cursor: crosshair !important;
+}
+
+.react-flow__handle.connecting,
+.circuit-handle.react-flow__handle.connecting {
+  background: #38bdf8 !important;
+  border-color: #0284c7 !important;
+}
+
+.react-flow__handle.valid,
+.circuit-handle.react-flow__handle.valid {
+  background: #4ade80 !important;
+  border-color: #16a34a !important;
+}
+
+.react-flow__connection path {
+  stroke-width: 2.5 !important;
+  stroke-dasharray: none !important;
+}
+
+.react-flow__edges {
+  z-index: 5 !important;
+}
+
+.react-flow__nodes {
+  z-index: auto !important;
+}
+
+.react-flow__node {
+  z-index: 3 !important;
+}
+
+.react-flow__node:has(.info-popup-visible) {
+  z-index: 1005 !important;
+}
+
+.react-flow__edge {
+  z-index: 1000 !important;
+}
+
+.react-flow__connectionline {
+  z-index: 1001 !important;
+}
+
+.circuit-connection-line {
+  pointer-events: none;
+}
+
+.react-flow__edge path {
+  cursor: pointer;
+}
+
+
+.react-flow__attribution {
+  display: none !important;
+}
+
+.react-flow__controls,
+.react-flow__minimap {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+}
+
+.react-flow__controls button {
+  width: 40px !important;
+  height: 40px !important;
+  background: #f8f9fa !important;
+  border: 1px solid #b8c0c8 !important;
+  border-radius: 999px !important;
+  color: #a8b0b8 !important;
+  fill: #a8b0b8 !important;
+  box-shadow: none !important;
+}
+
+.react-flow__controls button:hover {
+  background: #eef2f5 !important;
+}
+
+.react-flow__controls button svg {
+  fill: #a8b0b8 !important;
+}
+
+/* Hide default Blockly toolbox category list */
+.blocklyToolbox {
+  display: none !important;
+}
+
+/* ── CANVAS ── */
+.blockly-canvas .blocklyMainBackground {
+  fill: #f8fafc !important;
+  stroke: none !important;
+}
+
+/* ── FLYOUT ── */
+.blocklyFlyoutBackground {
+  fill: #ffffff !important;
+  fill-opacity: 1 !important;
+  stroke: #e2e8f0 !important;
+  stroke-width: 1 !important;
+}
+
+.blocklyFlyoutLabelText {
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 9.5px !important;
+  fill: #94a3b8 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+}
+
+/* ── FLYOUT BUTTONS ── */
+.blocklyFlyoutButton {
+  cursor: pointer !important;
+}
+
+.blocklyFlyoutButtonBackground {
+  fill: #EFF6FF !important;
+  stroke: #BEE3F8 !important;
+  rx: 6px !important;
+  ry: 6px !important;
+  transition: fill 0.15s, stroke 0.15s !important;
+}
+
+.blocklyFlyoutButton:hover .blocklyFlyoutButtonBackground {
+  fill: #DBEAFE !important;
+  stroke: #90CDF4 !important;
+}
+
+.blocklyFlyoutButton .blocklyText {
+  fill: #2563EB !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+}
+
+/* ── BLOCK TEXT ── */
+.blocklyText {
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 500 !important;
+}
+
+/* ── SCROLLBARS ── */
+.blocklyScrollbarHandle {
+  fill: #cbd5e1 !important;
+  transition: fill 0.15s !important;
+}
+
+.blocklyScrollbarHandle:hover {
+  fill: #94a3b8 !important;
+}
+
+.blocklyScrollbarBackground {
+  fill: transparent !important;
+}
+
+/* ── CONNECTION HIGHLIGHT ── */
+.blocklyHighlightedConnectionPath {
+  stroke: #3b82f6 !important;
+  stroke-width: 4px !important;
+}
+
+/* ── SELECTED BLOCK ── */
+.blocklySelected > .blocklyPath {
+  stroke: #3b82f6 !important;
+  stroke-width: 2px !important;
+  filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.3)) !important;
+}
+
+/* ── DRAGGING SHADOW ── */
+.blocklyDragging > .blocklyPath {
+  filter: drop-shadow(0 6px 20px rgba(15, 23, 42, 0.15)) !important;
+}
+
+/* ── WORKSPACE CONTROLS (Bottom Right stack) ── */
+.workspace-ctrl-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748B;
+  padding: 0;
+  transition: all 0.15s ease;
+}
+
+.workspace-ctrl-btn:hover {
+  background: #F8FAFC;
+  color: #0F172A;
+  border-color: #CBD5E1;
+}
+
+.workspace-ctrl-btn:active {
+  background: #F1F5F9;
+}
+
+.tutorial-rich-content {
+  overflow-wrap: anywhere;
+}
+
+.tutorial-rich-content > :first-child {
+  margin-top: 0;
+}
+
+.tutorial-rich-content > :last-child {
+  margin-bottom: 0;
+}
+
+.tutorial-rich-content h1,
+.tutorial-rich-content h2,
+.tutorial-rich-content h3,
+.tutorial-rich-content h4 {
+  color: #101828;
+  font-weight: 900;
+  line-height: 1.25;
+  margin: 1.25rem 0 0.6rem;
+}
+
+.tutorial-rich-content h1 {
+  font-size: 1.55rem;
+}
+
+.tutorial-rich-content h2 {
+  font-size: 1.28rem;
+}
+
+.tutorial-rich-content h3 {
+  font-size: 1.05rem;
+}
+
+.tutorial-rich-content h4 {
+  font-size: 0.95rem;
+}
+
+.tutorial-rich-content p {
+  margin: 0.6rem 0;
+}
+
+.tutorial-rich-content strong {
+  color: #26384d;
+  font-weight: 900;
+}
+
+.tutorial-rich-content ul,
+.tutorial-rich-content ol {
+  margin: 0.65rem 0 1rem 1.35rem !important;
+  padding-left: 1.1rem !important;
+}
+
+.tutorial-rich-content ul {
+  list-style: disc outside !important;
+}
+
+.tutorial-rich-content ol {
+  list-style: decimal outside !important;
+}
+
+.tutorial-rich-content li {
+  display: list-item !important;
+  margin: 0.35rem 0;
+  padding-left: 0.2rem;
+}
+
+.tutorial-rich-content li > p {
+  margin: 0.25rem 0;
+}
+
+.tutorial-rich-content figure {
+  display: block !important;
+  margin: 1rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.tutorial-rich-content figure.table {
+  display: block !important;
+}
+
+.tutorial-rich-content table {
+  display: table !important;
+  width: 100% !important;
+  min-width: 520px;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  overflow: hidden;
+  border: 1px solid #cfdbe6 !important;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.tutorial-rich-content thead {
+  display: table-header-group !important;
+}
+
+.tutorial-rich-content tbody {
+  display: table-row-group !important;
+}
+
+.tutorial-rich-content tr {
+  display: table-row !important;
+}
+
+.tutorial-rich-content th,
+.tutorial-rich-content td {
+  display: table-cell !important;
+  border: 1px solid #d8e3ec !important;
+  padding: 0.7rem 0.85rem !important;
+  text-align: left !important;
+  vertical-align: top !important;
+}
+
+.tutorial-rich-content th {
+  background: #eef6fb !important;
+  color: #101828 !important;
+  font-weight: 900 !important;
+}
+
+.tutorial-rich-content td {
+  color: #425466;
+}
